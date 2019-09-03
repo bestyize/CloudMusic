@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.yize.cloudmusic.model.MusicHelper;
 import com.yize.cloudmusic.model.SongInfo;
-import org.junit.Test;
+
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -14,6 +14,7 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
+
 class KuwoInfo {
     private int rid;
     private String name;
@@ -82,18 +83,19 @@ class KuwoInfo {
         this.hasLossless = hasLossless;
     }
 }
+
 public class KwMusic implements MusicHelper {
-    @Test
-    public void testSearchAll(){
-        List<SongInfo>  songInfoList=searchMusic("十年",5);
-        System.out.println(songInfoList);
-    }
-    @Test
-    public void testFindDownloadLink(){
-        List<SongInfo>  songInfoList=searchMusic("十年",5);
-        SongInfo songInfo=getDownloadLink(songInfoList.get(0));
-        System.out.println(songInfo);
-    }
+//    @Test
+//    public void testSearchAll(){
+//        List<SongInfo>  songInfoList=searchMusic("十年",5);
+//        System.out.println(songInfoList);
+//    }
+//    @Test
+//    public void testFindDownloadLink(){
+//        List<SongInfo>  songInfoList=searchMusic("十年",5);
+//        SongInfo songInfo=getDownloadLink(songInfoList.get(0));
+//        System.out.println(songInfo);
+//    }
 
     @Override
     public List<SongInfo> searchMusic(String keyword, int num) {
@@ -166,7 +168,6 @@ public class KwMusic implements MusicHelper {
             conn.setConnectTimeout(4000);
             conn.setReadTimeout(15000);
             conn.setRequestProperty("User-Agent","Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Mobile Safari/537.36");
-            conn.setRequestProperty("Host","m.music.migu.cn");
             BufferedReader reader=new BufferedReader(new InputStreamReader(conn.getInputStream(),"utf-8"));
             StringBuilder sb=new StringBuilder();
             String line;

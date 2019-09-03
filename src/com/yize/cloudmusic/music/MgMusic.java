@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.yize.cloudmusic.model.MusicHelper;
 import com.yize.cloudmusic.model.SongInfo;
-import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -47,27 +46,27 @@ public class MgMusic implements MusicHelper {
     private String urlField="androidUrl";
     private static final String baseContentLink="https://c.musicapp.migu.cn/MIGUM2.0/v1.0/content/resourceinfo.do?ua=Android_migu&version=5.0&resourceType=2&copyrightId=";
 
-    @Test
-    public void testSearchAll(){
-        System.out.println("开始搜索...");
-        List<SongInfo> songInfoList=searchMusic("十年",10);
-        System.out.println(songInfoList);
-        System.out.println("搜索结束...");
-        System.out.println("正在获取下载链接...");
-        for(SongInfo songInfo:songInfoList){
-            songInfo=getDownloadLink(songInfo);
-        }
-        System.out.println("获取完毕...");
-        System.out.println(songInfoList);
-
-    }
-    @Test
-    public void testSearchById(){
-        SongInfo songInfo=new SongInfo();
-        songInfo.setSongid("69910406417");
-        songInfo=getDownloadLink(songInfo);
-        System.out.println(songInfo.getSqDownloadLink());
-    }
+//    @Test
+//    public void testSearchAll(){
+//        System.out.println("开始搜索...");
+//        List<SongInfo> songInfoList=searchMusic("十年",10);
+//        System.out.println(songInfoList);
+//        System.out.println("搜索结束...");
+//        System.out.println("正在获取下载链接...");
+//        for(SongInfo songInfo:songInfoList){
+//            songInfo=getDownloadLink(songInfo);
+//        }
+//        System.out.println("获取完毕...");
+//        System.out.println(songInfoList);
+//
+//    }
+//    @Test
+//    public void testSearchById(){
+//        SongInfo songInfo=new SongInfo();
+//        songInfo.setSongid("69910406417");
+//        songInfo=getDownloadLink(songInfo);
+//        System.out.println(songInfo.getSqDownloadLink());
+//    }
 
     @Override
     public List<SongInfo> searchMusic(String keyword, int num) {

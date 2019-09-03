@@ -23,7 +23,7 @@ public interface MusicHelper {
      * @param quality 歌曲质量，包括SQ、HQ、PQ、LQ，品质依次递减
      * @return
      */
-    SongInfo getDownloadLink(SongInfo songInfo,String quality);
+    SongInfo getDownloadLink(SongInfo songInfo, String quality);
 
     /**
      * 下载网页源码
@@ -39,7 +39,7 @@ public interface MusicHelper {
      * @param newField 新的字段名
      * @return  处理后的字符串
      */
-    String replaceFieldName(String info,String field,String newField);
+    String replaceFieldName(String info, String field, String newField);
 
 
 }

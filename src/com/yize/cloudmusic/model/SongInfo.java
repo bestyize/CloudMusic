@@ -1,7 +1,5 @@
 package com.yize.cloudmusic.model;
 
-import com.google.gson.annotations.SerializedName;
-
 import java.io.Serializable;
 
 public class SongInfo implements Serializable {
